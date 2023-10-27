@@ -1,5 +1,8 @@
 module.exports = {
     plugins: [
-        require('autoprefixer')
-    ]
+        'postcss-preset-env', {
+            stage: 3,
+            autoprefixer: { flexbox: 'no-2009' },
+        },
+    ],
 }
