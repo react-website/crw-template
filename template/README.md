@@ -2,7 +2,7 @@
 create react project cli
 
 ## start
-详见 [package.json](./package.json) 文件的 ```scripts```
+详见 [package.json](./template.json) 文件的 ```scripts```
 
 ```shell
 # 开发环境 DEV
