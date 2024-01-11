@@ -10,7 +10,6 @@ import './css/index.scss'
 createRoot(document.getElementById('root'))
     .render(
         <React.StrictMode>
-            hello world!
             <Provider store={store}>
                 <AppRoot />
             </Provider>

@@ -96,8 +96,10 @@ module.exports = {
         'import/resolver': {
             webpack: {
                 config: {
-                    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
-                    alias
+                    resolve: {
+                        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+                        alias
+                    }
                 }
             }
         }
