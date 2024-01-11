@@ -7,7 +7,7 @@
 
 const { resolve } = require('path')
 
-const resolveApp = (relativePath) => resolveApp(__dirname, 'src', relativePath)
+const resolveApp = (relativePath) => resolve(__dirname, 'src', relativePath)
 
 module.exports = () => ({
     alias: {
