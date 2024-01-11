@@ -1,4 +1,4 @@
-const { alias = {} } = require('./crw.config')
+const { alias = {} } = require('./crw.config')()
 
 module.exports = {
     root: true,
@@ -85,7 +85,6 @@ module.exports = {
             }
         ],
         'import/no-extraneous-dependencies': 'off',
-        //        "import/no-unresolved": {},
         indent: ['error', 4],
         'react/jsx-indent': ['error', 4],
         'react/jsx-indent-props': ['error', 4],
@@ -97,6 +96,7 @@ module.exports = {
         'import/resolver': {
             webpack: {
                 config: {
+                    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
                     alias
                 }
             }
