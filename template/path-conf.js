@@ -9,8 +9,8 @@ const DIST_PATH = path.join(ROOT_PATH, 'dist')
 const TMP_PATH = path.join(ROOT_PATH, 'tmp')
 
 // 文档路径
-const DOC_FROM_PATH = path.join(ROOT_PATH, 'doc')
-const DOC_TO_PATH = path.join(DIST_PATH, 'doc')
+const DOC_FROM_PATH = path.join(ROOT_PATH, 'docs')
+const DOC_TO_PATH = path.join(DIST_PATH, 'docs')
 const IMAGE_FROM_PATH = path.join(APP_PATH, 'images')
 const IMAGE_TO_PATH = path.join(DIST_PATH, 'images')
 
