@@ -18,7 +18,7 @@ routeContext.keys().forEach((key) => {
 const rootRouters = [
     {
         path: '/',
-        element: <Navigate to="/login" />,
+        element: <Navigate to="/app" />,
     },
     {
         path: '/login',

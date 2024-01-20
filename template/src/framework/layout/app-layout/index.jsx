@@ -1,16 +1,15 @@
-import React, { memo, useEffect, useCallback } from 'react'
+import React, { memo, useEffect } from 'react'
 import { Layout, Drawer } from 'antd'
 
 import { useSelector, useDispatch } from 'react-redux'
 
-import './scss/index.scss'
 import { getUserInfoAction } from '@pages/login/api'
-
-import { globalAction } from '@framework/reducer'
 import AppHeader from '../app-header'
 import AppFooter from '../app-footer'
 import AppSlider from '../app-slider'
 import AppSetting from '../app-setting'
+
+import './scss/index.scss'
 
 function App() {
     const appSlider = useSelector((state) => state.global.appSlider)
@@ -20,17 +19,13 @@ function App() {
         dispatch(getUserInfoAction())
     }, [])
 
-    const toggleAppSlider = useCallback(() => {
-        dispatch(globalAction.updateAppSlider(false))
-    }, [])
-
     return (
-        <Layout stylename="app-container">
+        <Layout styleName="app-container">
             <Layout>
-                <AppHeader systemName="WELCOME" />
+                <AppSlider systemName="WELCOME" />
                 <Layout>
-                    <AppSlider />
-                    <Layout>
+                    <AppHeader />
+                    <Layout className="">
                         <Layout.Content>
                             content
                         </Layout.Content>
@@ -44,7 +39,6 @@ function App() {
                 size="458px"
                 footer={false}
                 header="页面配置"
-                onClose={toggleAppSlider}
             >
                 <AppSetting />
             </Drawer>

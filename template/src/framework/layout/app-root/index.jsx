@@ -1,10 +1,11 @@
 import React, { memo } from 'react'
 import { RouterProvider } from 'react-router-dom'
 import { ConfigProvider } from 'antd'
+import { StyleProvider, px2remTransformer } from '@ant-design/cssinjs'
 import { useSelector, useDispatch } from 'react-redux'
 import i18next from 'i18next'
 import { I18nextProvider } from 'react-i18next'
-import { globalAction } from '@framework/reducer'
+import { updateLanguage } from '@framework/reducer'
 
 import getRouter from '@/routers'
 import ErrorBoundary from '@components/error-boundary'
@@ -25,9 +26,13 @@ function Root() {
         i18next.changeLanguage(lng).then(() => {
             // eslint-disable-next-line global-require,import/no-dynamic-require
             setAntdLanguageData(require(`antd/es/locale/${lng.replace('-', '_')}.js`).default)
-            if (!language) dispatch(globalAction.updateLanguage(lng))
+            if (!language) dispatch(updateLanguage(lng))
         })
     }
+
+    const px2rem = px2remTransformer({
+        rootValue: 16
+    })
 
     React.useEffect(() => {
         changeLanguage()
@@ -35,9 +40,11 @@ function Root() {
 
     return (
         <ConfigProvider locale={antdLanguageData}>
-            <I18nextProvider i18n={i18n}>
-                <RouterProvider router={getRouter()} fallbackElement={<ErrorBoundary />} />
-            </I18nextProvider>
+            <StyleProvider transformers={[px2rem]}>
+                <I18nextProvider i18n={i18n}>
+                    <RouterProvider router={getRouter()} fallbackElement={<ErrorBoundary />} />
+                </I18nextProvider>
+            </StyleProvider>
         </ConfigProvider>
     )
 }

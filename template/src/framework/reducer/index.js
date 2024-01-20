@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
     appLanguage: '', // 当前系统语言
     appTheme: '', // 当前系统主题
-    appSlider: false, // 侧边栏
+    collapsedAppSlider: false, // 侧边栏是否折叠
 }
 
 const reducers = {
@@ -32,9 +32,9 @@ const reducers = {
      * @param action
      * @returns {*&{appSlider}}
      */
-    updateAppSlider: (state, action) => ({
+    updateCollapsedAppSlider: (state, action) => ({
         ...state,
-        appSlider: action.payload
+        collapsedAppSlider: action.payload
     })
 }
 
@@ -44,6 +44,10 @@ export const globalSlice = createSlice({
     reducers,
 })
 
-export const globalAction = globalSlice.actions
+export const {
+    updateTheme,
+    updateLanguage,
+    updateCollapsedAppSlider
+} = globalSlice.actions
 
 export default globalSlice.reducer

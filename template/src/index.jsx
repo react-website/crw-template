@@ -2,7 +2,6 @@ import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
 import AppRoot from '@framework/layout/app-root'
-
 import store from '@framework/store'
 
 import './css/index.scss'

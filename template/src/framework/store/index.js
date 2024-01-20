@@ -2,26 +2,12 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import logger from 'redux-logger'
 import globalReducer from '../reducer'
 
-const round = (num) => Math.round(num * 100) / 100
-
-const monitorReducerEnhancer = (createStore) => (reducer, initialState, enhancer) => {
-    const monitoredReducer = (state, action) => {
-        const start = performance.now()
-        const newState = reducer(state, action)
-        const end = performance.now()
-
-        const diff = round(end - start)
-
-        console.log(`${action.type} process time: ${diff}ms`)
-
-        return newState
-    }
-
-    return createStore(monitoredReducer, initialState, enhancer)
-}
-
 const isProd = process.env.NODE_ENV === 'production'
 
+/**
+ * 获取系统所有的reducer slice
+ * @returns {{}}
+ */
 const importAllReducer = () => {
     const reducers = {}
     const requireContext = require.context('@pages', true, /([a-zA-Z]+)\/reducer\/index\.js$/)
@@ -44,7 +30,6 @@ export default configureStore({
         global: globalReducer,
     }),
     devTools: !isProd,
-    enhancers: [monitorReducerEnhancer],
     middleware: (getDefaultMiddleware) => {
         if (isProd) return getDefaultMiddleware()
         return getDefaultMiddleware().concat(logger)

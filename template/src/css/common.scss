@@ -6,6 +6,7 @@
     --blue: #095c91;
     --blue-r: #315a7491;
     --lightblue: #0393a3;
+    --primary-color: #4a62e7;
 
     /* 圆角 */
     --button-radius: 0.7rem;
@@ -13,10 +14,6 @@
     /* 大小 */
     --max-width: 758px;
     --max-height: 420px;
-
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 16px;
   }
 
   html, body {
@@ -24,23 +21,33 @@
     height: 100vh;
     padding: 0;
     margin: 0;
-    color: #4a62e7;
-    background: #e8e8e8;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    background-color: #f5f5f5;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #f5f5f5;
+    box-shadow: inset 0 0 6px #b3b3b3;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #0079d9;
+    border-radius: 4px;
+    box-shadow: inset 0 0 6px #b3b3b3;
   }
 
   body {
-    display: grid;
-    place-items: center;
-    align-items: center;
-    height: 100vh;
-    background-color: var(--white);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    font-size: 16px;
   }
 
-  #root, .ant-layout {
+  #root,
+  .ant-layout {
     width: 100%;
     height: 100%;
   }
@@ -53,4 +60,3 @@
     visibility: hidden;
   }
 }
-

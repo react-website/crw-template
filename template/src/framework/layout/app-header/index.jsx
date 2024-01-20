@@ -1,20 +1,22 @@
-import React, { memo } from 'react'
-import PropTypes from 'prop-types'
-import { useSelector } from 'react-redux'
+import React, { memo, useCallback } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { Layout } from 'antd'
-import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
+import { MenuFoldOutlined } from '@ant-design/icons'
 import UserDropdown from '@components/user-dropdown'
 import AppLanguage from '@components/app-language'
+import { updateCollapsedAppSlider } from '@framework/reducer'
 
 import './scss/index.scss'
 
-const noop = () => {}
-
-function AppHeader({
-    collapsed,
-    setCollapsed,
-}) {
+function AppHeader() {
     const userInfo = useSelector((state) => state.userInfo)
+    const collapsedAppSlider = useSelector((state) => state.global.collapsedAppSlider)
+
+    const dispatch = useDispatch()
+
+    const setCollapsed = useCallback(() => {
+        dispatch(updateCollapsedAppSlider(true))
+    }, [dispatch])
 
     const dropdownList = [
         {
@@ -43,13 +45,8 @@ function AppHeader({
 
     return (
         <Layout.Header styleName="app-header">
-            <div className="logo">WELCOME</div>
             <div className="slider-collapse-btn">
-                {
-                    collapsed
-                        ? <MenuUnfoldOutlined onClick={() => setCollapsed(false)} />
-                        : <MenuFoldOutlined onClick={() => setCollapsed(true)} />
-                }
+                { !collapsedAppSlider && <MenuFoldOutlined onClick={setCollapsed} /> }
             </div>
             <div className="header-menu-wrapper" />
             <div className="header-action-wrapper">
@@ -66,13 +63,10 @@ function AppHeader({
 }
 
 AppHeader.propTypes = {
-    collapsed: PropTypes.bool,
-    setCollapsed: PropTypes.func,
+
 }
 
 AppHeader.defaultProps = {
-    collapsed: false,
-    setCollapsed: noop,
 }
 
 export default memo(AppHeader)

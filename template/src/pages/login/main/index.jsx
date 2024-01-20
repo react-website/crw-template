@@ -2,7 +2,10 @@ import React, { memo, useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import {
-    Form, Input, Radio, Button
+    Form,
+    Input,
+    Radio,
+    Button
 } from 'antd'
 import { useTranslation } from 'react-i18next'
 import classNames from 'classnames'
