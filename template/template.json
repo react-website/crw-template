@@ -15,16 +15,18 @@
   "author": "qq2575896094",
   "license": "MIT",
   "devDependencies": {
+    "core-js": "^3.35.1",
     "prop-types": "^15.8.1",
     "redux-logger": "^3.0.6"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
     "antd": "^5.12.8",
-    "axios": "^1.6.5",
+    "axios": "^1.6.7",
     "classnames": "^2.5.1",
-    "core-js": "^3.35.0",
     "i18next": "^23.7.16",
+    "path-to-regexp": "^6.2.1",
+    "qs": "^6.11.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^14.0.0",

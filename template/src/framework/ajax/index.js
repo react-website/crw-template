@@ -1,6 +1,6 @@
 import axios from 'axios'
 import qs from 'qs'
-import { pathToRegexp } from 'path-to-regexp'
+import { pathToRegexp } from 'path-to-regexp/dist'
 
 const instance = axios.create({
     baseURL: '',
