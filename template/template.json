@@ -4,6 +4,9 @@
   "description": "create react website template.",
   "scripts": {
     "start": "crw-script start",
+    "build": "crw-script build",
+    "mock": "crw-script mock",
+    "stylelint": "stylelint './src/**/index.scss' --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
