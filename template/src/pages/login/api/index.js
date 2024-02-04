@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import OkHttp from '@/okHttp'
+// import OkHttp from '@/okHttp'
 import { userInfoAction } from '../reducer'
 
 const urlPrefix = '/user'

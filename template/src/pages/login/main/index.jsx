@@ -12,9 +12,6 @@ import classNames from 'classnames'
 import CustomIcon from '@components/custom-icon'
 import particlesJs from '@/plugins/particles'
 import particlesJson from '@/plugins/particlesjs-config'
-
-import { loginAction } from '@pages/login/api'
-
 import './scss/index.scss'
 
 function Login() {

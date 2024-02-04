@@ -1,9 +1,8 @@
 import { createFromIconfontCN } from '@ant-design/icons'
-
-const iconfont = require('@fonts/iconfont')
+import comIcon from 'com-icon'
 
 const CustomIcon = createFromIconfontCN({
-    scriptUrl: [iconfont],
+    scriptUrl: [comIcon],
 })
 
 export default CustomIcon

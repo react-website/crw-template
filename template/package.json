@@ -1,11 +1,11 @@
 {
-  "name": "crw-template",
-  "version": "1.0.0",
+  "name": "myapp",
+  "version": "0.1.0",
   "description": "create react website template.",
   "scripts": {
     "start": "crw-script start",
     "build": "crw-script build",
-    "mock": "crw-script mock",
+    "mock": "crw-script mock --engine nodemon",
     "stylelint": "stylelint './src/**/index.scss' --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,24 +17,14 @@
   ],
   "author": "qq2575896094",
   "license": "MIT",
+  "private": true,
   "devDependencies": {
     "core-js": "^3.35.1",
+    "crw-scripts": "^1.1.20",
     "prop-types": "^15.8.1",
     "redux-logger": "^3.0.6"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.0.1",
-    "antd": "^5.12.8",
-    "axios": "^1.6.7",
-    "classnames": "^2.5.1",
-    "com-icon": "^1.0.1",
-    "i18next": "^23.7.16",
-    "path-to-regexp": "^6.2.1",
-    "qs": "^6.11.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-i18next": "^14.0.0",
-    "react-redux": "^9.0.4",
-    "react-router-dom": "^6.22.0"
+
   }
 }

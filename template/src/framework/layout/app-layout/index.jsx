@@ -1,12 +1,13 @@
 import React, { memo, useEffect } from 'react'
+import { Outlet } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
 import { Layout, Drawer } from 'antd'
 
-import { useSelector, useDispatch } from 'react-redux'
-
 import { getUserInfoAction } from '@pages/login/api'
-import AppHeader from '../app-header'
-import AppFooter from '../app-footer'
-import AppSlider from '../app-slider'
+import PageHeader from '@components/page-header'
+import AppHeader from './app-header'
+import AppFooter from './app-footer'
+import AppSlider from './app-slider'
 import AppSetting from '../app-setting'
 
 import './scss/index.scss'
@@ -27,7 +28,8 @@ function App() {
                     <AppHeader />
                     <Layout className="">
                         <Layout.Content>
-                            content
+                            <PageHeader />
+                            <Outlet />
                         </Layout.Content>
                         <AppFooter />
                     </Layout>

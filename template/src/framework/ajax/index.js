@@ -89,7 +89,7 @@ const okHttp = (url, {
     default: {
         return Promise.resolve({
             statusCode: 300,
-            message: 'ajax method params error!'
+            message: 'ajax method params server-error!'
         })
     }
     }

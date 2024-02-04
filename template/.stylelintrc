@@ -10,14 +10,10 @@
   ],
   "rules" : {
     "at-rule-no-vendor-prefix" : true,
-    "block-opening-brace-space-before" : "always-multi-line",
     "color-hex-length" : "long",
     "color-named" : "never",
     "declaration-block-no-duplicate-properties" : true,
-    "declaration-block-semicolon-newline-after" : "always",
-    "declaration-block-semicolon-newline-before" : "never-multi-line",
     "declaration-colon-newline-after" : null,
-    "declaration-colon-space-after" : "always-single-line",
     "declaration-empty-line-before" : [
       "never",
       {
@@ -28,26 +24,14 @@
     ],
     "font-family-name-quotes" : "always-unless-keyword",
     "font-weight-notation" : "numeric",
-    "function-max-empty-lines" : 1,
     "function-url-quotes" : "always",
-    "indentation" : [
-      4,
-      {
-        "ignore" : [
-          "value"
-        ]
-      }
-    ],
     "length-zero-no-unit" : true,
-    "max-empty-lines" : 3,
-    "max-line-length" : 200,
     "max-nesting-depth" : 10,
     "media-feature-name-no-vendor-prefix" : true,
     "no-descending-specificity" : null,
     "no-duplicate-selectors" : true,
     "no-unknown-animations" : true,
     "number-max-precision" : 8,
-    "number-no-trailing-zeros" : true,
     "property-no-unknown" : true,
     "rule-empty-line-before" : [
       "always-multi-line",
@@ -74,11 +58,9 @@
         ]
       }
     ],
-    "string-quotes" : "double",
     "time-min-milliseconds" : 100,
     "unit-disallowed-list" : "never",
     "value-keyword-case" : "lower",
-    "value-list-comma-newline-before" : "never-multi-line",
     "value-no-vendor-prefix" : true,
     "order/order" : [
       [
@@ -131,17 +113,7 @@
         ]
       }
     ],
-    "block-closing-brace-newline-after" : [
-      "always",
-      {
-        "ignoreAtRules" : [
-          "else",
-          "if"
-        ]
-      }
-    ],
     "scss/at-extend-no-missing-placeholder" : true,
-    "scss/at-import-no-partial-leading-underscore" : true,
     "scss/at-import-partial-extension-blacklist" : [
       "scss"
     ],
