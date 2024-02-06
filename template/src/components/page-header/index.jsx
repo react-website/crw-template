@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 import './scss/index.scss'
 
@@ -10,4 +10,4 @@ function PageHeader() {
     )
 }
 
-export default PageHeader
+export default memo(PageHeader)

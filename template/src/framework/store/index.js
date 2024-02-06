@@ -31,7 +31,7 @@ export default configureStore({
     }),
     devTools: !isProd,
     middleware: (getDefaultMiddleware) => {
-        if (isProd) return getDefaultMiddleware()
-        return getDefaultMiddleware().concat(logger)
+        if (isProd) return getDefaultMiddleware({ serializableCheck: false })
+        return getDefaultMiddleware({ serializableCheck: false }).concat(logger)
     },
 })

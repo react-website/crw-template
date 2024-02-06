@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 function Error500() {
     return (
@@ -6,4 +6,4 @@ function Error500() {
     )
 }
 
-export default Error500
+export default memo(Error500)

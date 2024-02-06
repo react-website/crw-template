@@ -1,7 +1,7 @@
 import React, { memo, useCallback } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Layout } from 'antd'
-import { MenuFoldOutlined } from '@ant-design/icons'
+import CustomIcon from '@components/custom-icon'
 import UserDropdown from '@components/user-dropdown'
 import AppLanguage from '@components/app-language'
 import { updateCollapsedAppSlider } from '@framework/reducer'
@@ -14,8 +14,8 @@ function AppHeader() {
 
     const dispatch = useDispatch()
 
-    const setCollapsed = useCallback(() => {
-        dispatch(updateCollapsedAppSlider(true))
+    const setCollapsed = useCallback((collapsed) => {
+        dispatch(updateCollapsedAppSlider(collapsed))
     }, [dispatch])
 
     const dropdownList = [
@@ -45,8 +45,8 @@ function AppHeader() {
 
     return (
         <Layout.Header styleName="app-header">
-            <div className="slider-collapse-btn">
-                { !collapsedAppSlider && <MenuFoldOutlined onClick={setCollapsed} /> }
+            <div className="slider-collapse-btn" onClick={() => setCollapsed(!collapsedAppSlider)} role="presentation">
+                <CustomIcon type="icon-wanggebuju1" />
             </div>
             <div className="header-menu-wrapper" />
             <div className="header-action-wrapper">
@@ -60,13 +60,6 @@ function AppHeader() {
             </div>
         </Layout.Header>
     )
-}
-
-AppHeader.propTypes = {
-
-}
-
-AppHeader.defaultProps = {
 }
 
 export default memo(AppHeader)

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { useSelector, useDispatch } from 'react-redux'
 import { Layout } from 'antd'
 import classNames from 'classnames'
-import { MenuUnfoldOutlined } from '@ant-design/icons'
 import { updateCollapsedAppSlider } from '@framework/reducer'
+import AppMenu from '@components/app-menu'
 
 import './scss/index.scss'
 
@@ -21,6 +21,7 @@ function AppSlider({
     return (
         <Layout.Sider
             styleName="app-slider"
+            collapsedWidth={64}
             collapsed={collapsedAppSlider}
             onCollapse={setCollapsed}
         >
@@ -29,16 +30,8 @@ function AppSlider({
                 <span>{systemName}</span>
             </header>
             <main className="app-slider-main">
-                内容
+                <AppMenu />
             </main>
-            {
-                collapsedAppSlider && (
-                    <footer className="app-slider-footer">
-                        <MenuUnfoldOutlined onClick={setCollapsed} />
-
-                    </footer>
-                )
-            }
         </Layout.Sider>
     )
 }

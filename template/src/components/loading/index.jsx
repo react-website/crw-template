@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 import './scss/index.scss'
 
@@ -11,4 +11,4 @@ function Loading() {
     )
 }
 
-export default Loading
+export default memo(Loading)

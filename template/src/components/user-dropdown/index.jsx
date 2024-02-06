@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 import { Dropdown, Avatar, Menu } from 'antd'
 import CustomIcon from '@components/custom-icon'
@@ -60,4 +60,4 @@ UserDropdown.propTypes = {
     onClick: PropTypes.func,
 }
 
-export default UserDropdown
+export default memo(UserDropdown)

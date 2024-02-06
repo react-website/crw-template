@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { useRouteError } from 'react-router-dom'
 
 function ErrorBoundary() {
@@ -7,4 +7,4 @@ function ErrorBoundary() {
     return (<>出错了~~</>)
 }
 
-export default ErrorBoundary
+export default memo(ErrorBoundary)

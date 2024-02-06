@@ -7,6 +7,6 @@
     "dist",
     "docs"
   ],
-  "watch" : ["mock/**/*.js"],
+  "watch" : ["mock/test/**/*.js"],
   "ext": "js json"
 }

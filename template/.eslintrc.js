@@ -84,6 +84,7 @@ module.exports = {
                 jsx: 'never'
             }
         ],
+	    'prefer-promise-reject-errors': 'off',
         'import/no-extraneous-dependencies': 'off',
         indent: ['error', 4],
         'react/jsx-indent': ['error', 4],

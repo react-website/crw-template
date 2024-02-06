@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 function ServerError() {
     return (
@@ -6,4 +6,4 @@ function ServerError() {
     )
 }
 
-export default ServerError
+export default memo(ServerError)

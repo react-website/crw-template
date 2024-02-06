@@ -2,6 +2,7 @@ import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import enUS from '@/language/en-US'
 import zhCN from '@/language/zh-CN'
+import { getBrowserLanguage } from '@helper'
 
 export const LANGUAGES = [
     { value: 'en-US', name: 'English' },
@@ -15,7 +16,8 @@ i18n.use(initReactI18next)
             'zh-CN': { translation: zhCN }
         },
         debug: true,
-        load: 'all',
+        // load: 'all',
+	    lng: getBrowserLanguage(),
         fallbackLng: 'zh-CN',
         interpolation: {
             escapeValue: false // not needed for react as it escapes by default

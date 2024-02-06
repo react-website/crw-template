@@ -1,17 +1,20 @@
 import React, { memo, useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import classNames from 'classnames'
+import CustomIcon from '@components/custom-icon'
+import particlesJs from '@/plugins/particles'
+import particlesJson from '@/plugins/particlesjs-config'
 import {
     Form,
     Input,
     Radio,
     Button
 } from 'antd'
-import { useTranslation } from 'react-i18next'
-import classNames from 'classnames'
-import CustomIcon from '@components/custom-icon'
-import particlesJs from '@/plugins/particles'
-import particlesJson from '@/plugins/particlesjs-config'
+
+import { loginAction } from '../reducer'
+
 import './scss/index.scss'
 
 function Login() {
@@ -24,15 +27,13 @@ function Login() {
         setIsSignIn(false)
     }
 
-    const handleSignIn = async (data) => {
-        dispatch(loginAction(data)).then(({ payload: response }) => {
-            if (response.statusCode === 200) navigate('/app')
+    const handleSignIn = (data) => {
+        dispatch(loginAction(data)).then((action) => {
+            if (!action.error) navigate('/app')
         })
     }
 
-    const signUp = () => {
-        setIsSignIn(true)
-    }
+    const signUp = () => setIsSignIn(true)
 
     const onFinish = (values) => {
         console.log('Success:', values)

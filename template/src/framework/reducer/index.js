@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { getBrowserLanguage } from '@helper'
 
 const initialState = {
-    appLanguage: '', // 当前系统语言
+    appLanguage: getBrowserLanguage(), // 当前系统语言
     appTheme: '', // 当前系统主题
     collapsedAppSlider: false, // 侧边栏是否折叠
 }

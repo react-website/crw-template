@@ -2,23 +2,20 @@ import React, { memo, useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { Layout, Drawer } from 'antd'
-
-import { getUserInfoAction } from '@pages/login/api'
+import { getUserInfoAction } from '@pages/login/reducer'
 import PageHeader from '@components/page-header'
-import AppHeader from './app-header'
-import AppFooter from './app-footer'
-import AppSlider from './app-slider'
+import AppHeader from '../app-header'
+import AppFooter from '../app-footer'
+import AppSlider from '../app-slider'
 import AppSetting from '../app-setting'
 
 import './scss/index.scss'
 
-function App() {
+function AppLayout() {
     const appSlider = useSelector((state) => state.global.appSlider)
     const dispatch = useDispatch()
 
-    useEffect(() => {
-        dispatch(getUserInfoAction())
-    }, [])
+    useEffect(() => { dispatch(getUserInfoAction()) }, [])
 
     return (
         <Layout styleName="app-container">
@@ -26,7 +23,7 @@ function App() {
                 <AppSlider systemName="WELCOME" />
                 <Layout>
                     <AppHeader />
-                    <Layout className="">
+                    <Layout>
                         <Layout.Content>
                             <PageHeader />
                             <Outlet />
@@ -48,4 +45,4 @@ function App() {
     )
 }
 
-export default memo(App)
+export default memo(AppLayout)

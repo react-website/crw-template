@@ -1,6 +1,7 @@
 import axios from 'axios'
 import qs from 'qs'
 import { pathToRegexp } from 'path-to-regexp/dist'
+import { notification } from 'antd'
 
 const instance = axios.create({
     baseURL: '',
@@ -52,7 +53,7 @@ const getUrl = (url, params) => {
 }
 
 // 网络
-const okHttp = (url, {
+const request = (url, {
     method = 'GET',
     headers = {},
     contentType = 'application/json; charset=UTF-8',
@@ -94,5 +95,44 @@ const okHttp = (url, {
     }
     }
 }
+
+/**
+ * 网络请求入口
+ * @param url
+ * @param options
+ * @returns {Promise<*>}
+ */
+const okHttp = async (url, options) => request(url, options).then((res) => {
+    const { data: { statusCode, message, data } } = res
+
+    switch (statusCode) {
+    case 200: {
+        return data
+    }
+    case 302: { // 默认跳转指定地址, 指定地址要求为绝对地址
+        window.location.href = data
+        break
+    }
+    case 401: { // 未登录, 去登录页面
+        window.location.replace('/')
+        break
+    }
+    case 403: { // 无访问权限
+        window.location.replace('/app')
+        break
+    }
+    default: {
+        return Promise.reject({ message })
+    }
+    }
+
+    return data
+}).catch(({ message, response }) => {
+    let errMsg = message
+    if (response) errMsg = response.statusText
+
+    notification.error({ message: errMsg })
+    return Promise.reject({ message })
+})
 
 export default okHttp

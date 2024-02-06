@@ -16,9 +16,12 @@ module.exports = () => ({
         '@components': resolveApp('components'),
         '@fonts': resolveApp('css/fonts'),
         '@framework': resolveApp('framework'),
-	    '@helper': resolveApp('helper')
+        '@helper': resolveApp('helper')
     },
     proxy: {
-        '/user': 'http://123.56.143.21:8090/user'
+        '/users': {
+            target: 'http://192.168.1.4:3003/users',
+	        pathRewrite: { '^/users': '' }
+        }
     },
 })

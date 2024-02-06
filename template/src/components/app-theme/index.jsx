@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { Dropdown } from 'antd'
 import CustomIcon from '@components/custom-icon'
 
@@ -14,4 +14,4 @@ function AppTheme() {
     )
 }
 
-export default AppTheme
+export default memo(AppTheme)

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Dropdown, Menu } from 'antd'
 import CustomIcon from '@components/custom-icon'
@@ -37,4 +37,4 @@ function AppLanguage() {
     )
 }
 
-export default AppLanguage
+export default memo(AppLanguage)
