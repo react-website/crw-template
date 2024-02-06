@@ -17,7 +17,7 @@ i18n.use(initReactI18next)
         },
         debug: true,
         // load: 'all',
-	    lng: getBrowserLanguage(),
+        lng: getBrowserLanguage(),
         fallbackLng: 'zh-CN',
         interpolation: {
             escapeValue: false // not needed for react as it escapes by default

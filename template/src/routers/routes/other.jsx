@@ -20,7 +20,6 @@ const otherRouter = [
         meta: {
             menuIndex: 2,
             key: 'other',
-            label: '其他',
             icon: 'icon-shaixuan2'
         },
         children: [
@@ -31,7 +30,6 @@ const otherRouter = [
                 meta: {
                     menuIndex: 1,
                     key: 'table',
-                    label: '表格',
                     icon: 'icon-icon4'
                 }
             },

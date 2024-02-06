@@ -13,27 +13,40 @@ const languageIconMap = {
 }
 
 function AppLanguage() {
-    const language = useSelector((state) => state.global.language)
+    const appLanguage = useSelector((state) => state.global.appLanguage)
     const dispatch = useDispatch()
 
-    const changeLanguage = ({ key }) => dispatch(updateLanguage(key))
+    const menuItems = React.useMemo(() => LANGUAGES.map(({
+        name,
+        value
+    }) => ({
+        label: name,
+        key: value,
+        icon: <CustomIcon type={languageIconMap[value]} />
+    })), [])
 
-    const menuItems = React.useMemo(() => {
-        const items = LANGUAGES.map(({ name, value }) => ({
-            label: name,
-            key: value
-        }))
-        return <Menu items={items} onClick={changeLanguage} selectedKeys={[language]} />
-    }, [language])
+    console.log(menuItems)
+
+    const handleClick = ({ key }) => {
+        dispatch(updateLanguage(key))
+    }
 
     return (
-        <Dropdown overlay={menuItems} placement="bottom">
-            <div className="language-dropdown">
-                {
-                    language && (<CustomIcon type={languageIconMap[language]} />)
-                }
-            </div>
-        </Dropdown>
+        <div styleName="language-dropdown-comp">
+            <Dropdown
+                menu={{
+                    items: menuItems,
+                    selectedKeys: [appLanguage],
+                    onClick: handleClick
+                }}
+                placement="bottom"
+                arrow
+            >
+                <div className="language-dropdown">
+                    <CustomIcon type={languageIconMap[appLanguage]} />
+                </div>
+            </Dropdown>
+        </div>
     )
 }
 

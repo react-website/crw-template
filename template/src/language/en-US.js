@@ -7,5 +7,11 @@ export default {
         normal: 'normal',
         admin: 'admin',
 
+    },
+    module: {
+        scaffold: 'SCAFFOLD',
+        other: 'OTHER',
+        table: 'TABLE',
+        list: 'LIST'
     }
 }

@@ -10,23 +10,29 @@ const noop = () => {}
 function UserDropdown({
     username,
     avatar,
-    list,
-    onClick,
 }) {
-    const menuItems = React.useMemo(() => {
-        const result = []
-        list.forEach(({ divider, ...other }) => {
-            if (divider) {
-                result.push({ type: 'divider' })
-            }
-            result.push(other)
-        })
-        return <Menu items={result} onClick={onClick} />
-    }, [JSON.stringify(list)])
+    const menuItems = [
+        {
+            label: '退出',
+            key: 'logout',
+            icon: <CustomIcon type="icon-zhuxiao" />
+        },
+    ]
+
+    const handleClick = ({ key }) => {
+        console.log(key, 'userDropdownClick')
+    }
 
     return (
-        <div className="user-dropdown" role="presentation">
-            <Dropdown overlay={menuItems} placement="bottomRight">
+        <div styleName="user-dropdown-comp" role="presentation">
+            <Dropdown
+                menu={{
+                    items: menuItems,
+                    onClick: handleClick
+                }}
+                placement="bottomRight"
+                arrow
+            >
                 <span>
                     <span className="username">{username}</span>
                     <Avatar
@@ -44,20 +50,11 @@ function UserDropdown({
 UserDropdown.defaultProps = {
     username: '',
     avatar: '',
-    list: [],
-    onClick: noop,
 }
 
 UserDropdown.propTypes = {
     username: PropTypes.string,
     avatar: PropTypes.string,
-    list: PropTypes.arrayOf(PropTypes.shape({
-        key: PropTypes.string.isRequired,
-        label: PropTypes.string.isRequired,
-        disabled: PropTypes.bool,
-        divider: PropTypes.bool,
-    })),
-    onClick: PropTypes.func,
 }
 
 export default memo(UserDropdown)

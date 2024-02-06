@@ -18,45 +18,15 @@ function AppHeader() {
         dispatch(updateCollapsedAppSlider(collapsed))
     }, [dispatch])
 
-    const dropdownList = [
-        {
-            label: '个人信息',
-            key: 'userInfo',
-            disabled: false,
-            divider: false,
-        },
-        {
-            label: '修改密码',
-            key: 'changePassword',
-            disabled: false,
-            divider: false,
-        },
-        {
-            label: '退出',
-            key: 'logout',
-            disabled: false,
-            divider: true,
-        },
-    ]
-
-    const userDropdownClick = ({ key }) => {
-        console.log(key, 'userDropdownClick')
-    }
-
     return (
         <Layout.Header styleName="app-header">
             <div className="slider-collapse-btn" onClick={() => setCollapsed(!collapsedAppSlider)} role="presentation">
-                <CustomIcon type="icon-wanggebuju1" />
+                <CustomIcon type="icon-appstore-fill" />
             </div>
             <div className="header-menu-wrapper" />
             <div className="header-action-wrapper">
                 <AppLanguage />
-                <UserDropdown
-                    username={userInfo.username}
-                    avatar={userInfo.avatar}
-                    list={dropdownList}
-                    onClick={userDropdownClick}
-                />
+                <UserDropdown username={userInfo.username} avatar={userInfo.avatar} />
             </div>
         </Layout.Header>
     )

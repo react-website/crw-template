@@ -15,7 +15,6 @@ const scaffoldRouter = [
         meta: {
             menuIndex: 1,
             key: 'scaffold',
-            label: '脚手架',
             icon: 'icon-gongchengshi'
         }
     }
