@@ -39,7 +39,6 @@ const otherRouter = [
                 meta: {
                     menuIndex: 2,
                     key: 'list',
-                    label: '列表',
                     icon: 'icon-icon11'
                 }
             }
