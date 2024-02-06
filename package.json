@@ -1,6 +1,6 @@
 {
   "name": "crw-template",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "create react website template.",
   "main": "index.js",
   "scripts": {

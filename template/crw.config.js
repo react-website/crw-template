@@ -20,7 +20,7 @@ module.exports = () => ({
     },
     proxy: {
         '/users': {
-            target: 'http://192.168.1.4:3003/users',
+            target: 'http://0.0.0.0:3003/users',
 	        pathRewrite: { '^/users': '' }
         }
     },
