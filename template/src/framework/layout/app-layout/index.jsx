@@ -34,7 +34,7 @@ function AppLayout() {
             </Layout>
             <Drawer
                 destroyOnClose
-                visible={appSlider}
+                open={appSlider}
                 size="458px"
                 footer={false}
                 header="页面配置"

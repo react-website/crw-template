@@ -4,6 +4,7 @@ import { Layout } from 'antd'
 import CustomIcon from '@components/custom-icon'
 import UserDropdown from '@components/user-dropdown'
 import AppLanguage from '@components/app-language'
+import AppTheme from '@components/app-theme'
 import { updateCollapsedAppSlider } from '@framework/reducer'
 
 import './scss/index.scss'
@@ -25,6 +26,7 @@ function AppHeader() {
             </div>
             <div className="header-menu-wrapper" />
             <div className="header-action-wrapper">
+                <AppTheme />
                 <AppLanguage />
                 <UserDropdown username={userInfo.username} avatar={userInfo.avatar} />
             </div>

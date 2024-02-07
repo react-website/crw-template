@@ -15,7 +15,7 @@ i18n.use(initReactI18next)
             'en-US': { translation: enUS },
             'zh-CN': { translation: zhCN }
         },
-        debug: true,
+        debug: false,
         // load: 'all',
         lng: getBrowserLanguage(),
         fallbackLng: 'zh-CN',

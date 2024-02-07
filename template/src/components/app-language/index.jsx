@@ -25,8 +25,6 @@ function AppLanguage() {
         icon: <CustomIcon type={languageIconMap[value]} />
     })), [])
 
-    console.log(menuItems)
-
     const handleClick = ({ key }) => {
         dispatch(updateLanguage(key))
     }

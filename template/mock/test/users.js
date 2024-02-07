@@ -17,12 +17,8 @@ module.exports = {
             age: 25,
             password: '!QAZXSW2',
             meta: {
-                createAt: {
-                    $numberLong: '1665989813422'
-                },
-                updateAt: {
-                    $numberLong: '1665989813422'
-                }
+                createAt: 1665989813422,
+                updateAt: 1665989813422
             }
         }
     }
